@@ -1,0 +1,64 @@
+body {
+    background-color: rgb(221, 119, 221);
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 1500px; 
+
+}
+
+h1 {
+    text-align: center;
+    color: black; 
+}
+
+#quizarea {
+    content: "";
+    background: white;
+    width: 90%;
+    height: 50%; 
+    text-align: center;
+    border-radius: 15%;
+}
+
+#container {
+    margin: 100px 100px 100px 100px; 
+    background-color: black;
+    border-radius: 10%;
+}
+
+button[disabled] {
+    cursor: default;
+    background: #c0c7cf;
+  }
+
+  .button {
+    border: solid 5px black;
+    background-color: rgb(87, 67, 141);
+    border-radius: 50px;
+    color: white; 
+    display: inline-block;
+    font-size: 35px;
+    line-height: 40px;
+    margin: 16px 16px 16px 20px;
+    padding: 14px 34px;
+    text-align: center;
+    cursor: pointer;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+  }
+
+  h2 {
+      background-color: white;
+      text-align: center;
+  }
+
+  h3 {
+      background-color: white;
+      text-align: center;
+  }
+  h3 p {
+      text-align: left;
+  }
