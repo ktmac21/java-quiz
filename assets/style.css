@@ -223,3 +223,25 @@ input {
         font-size: 20px;
     }
 }
+
+@media screen and (max-width: 450px) {
+    #quiz {
+        width: 300px; 
+    }
+
+    #timer-container {
+        width: 300px; 
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    button {
+        width: 200px; 
+    }
+
+    h1 {
+        font-size: 60px; 
+    }
+}
