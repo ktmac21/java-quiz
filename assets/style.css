@@ -134,4 +134,92 @@ h3 p {
     margin-left: 20px; 
 }
 
-  
+h4 {
+
+    border: solid 5px black; 
+    background-color: #84DCC6; 
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 2px;
+    width: 300px; 
+    height: 500px; 
+    font-size: 30px;
+    color:black;  
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+h4 p {
+    line-height: 5px;
+    font-size: 20px;
+    color: black; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 20px; 
+    text-align: left;
+
+
+}
+
+#initials-input {
+    border: solid 5px black; 
+    background-color: #84DCC6; 
+    text-align: center;
+    border-radius: 50px;
+    box-shadow: 0 0 10px 2px;
+    width: 250px; 
+    height: 50px; 
+    font-size: 20px;
+    color:black;  
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+::placeholder {
+    text-align: center;
+    color: black;
+    font-style: italic;
+}
+
+input {
+    border-radius: 20px; 
+}
+@media screen and (max-width: 1232px) {
+    #quiz {
+      
+        width: 900px;
+    }
+        
+    #timer-container {
+        width: 900px; 
+        
+    }
+
+
+}
+
+@media screen and (max-width: 928px) {
+    #quiz {
+     width: 600px;
+    height: 600px;
+    }
+
+    #timer-container {
+         width: 600px;
+        }
+     p {
+        font-size: 25px; 
+        padding-bottom: 20px; 
+    }
+}
+
+@media screen and (max-width: 664px) {
+    #quiz {
+        width: 500px; 
+    }
+
+    #timer-container {
+        width: 500px; 
+    }
+
+    p {
+        font-size: 20px;
+    }
+}

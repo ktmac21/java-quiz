@@ -136,35 +136,39 @@ var secondsLeft = 30;
 
 
 
-function startQuiz() {
+function startQuiz () {
+  chosenQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
+  
+  answersInChosenQuestion = chosenQuestion.split(" ");
+  currentQuestion = answersInChosenQuestion.length;
+  display = []
 
-  const output = [];
+  for (var i = 0; i < currentQuestion; i++) {
+    display.push(""); 
+  }
 
-  quizQuestions.forEach(
-    (currentQuestion, questionNumber) => {
-      
-      const answers = [];
-
-      for (letter in currentQuestion.answers) {
-
-        answers.push(
-          `<label>
-            <input type="radio" name="question${questionNumber}" value="${letter}">
-            ${letter} :
-            ${currentQuestion.answers[letter]}
-          </label>`
-        );
-      }
-
-      output.push(
-      `<div class="question"> ${currentQuestion.question} </div>
-      <div class="answers"> ${answers.join('')} </div>`
-      );
-    }
-  );
-
-  quizContainer.innerHTML = output.join('');
+  quizContainer.textContent = display.join(" ")
 }
+
+function checkAnswer() {
+  var answeredQuestion = false;
+  if (chosenQuestion === correctAnswer) {
+    answeredQuestion = true;
+  }
+  if (answeredQuestion === false) {
+    secondsleft - 10)
+  }
+}
+
+function scoreboard() {
+  scorepoints = "100"
+  if (answeredQuestion === true) {
+    scorepoints ++;
+
+  }
+}
+
+
 
 startButton.addEventListener("click", function setTime() {
   var timerInterval = setInterval(function () {
@@ -179,10 +183,42 @@ startButton.addEventListener("click", function setTime() {
 )
 
 function sendMessage() {
-  timerText.textContent = "Your time is up!";
+  timerText.textContent = "Time's up!";
 
 };
 
-startButton.addEventListener("click", startQuiz);
+var playerScore = document.querySelector("#player-score")
+var highScore = document.querySelector("high-score")
+var score = 0
+var scoreBoardCount = 100
+var savedHighScore = document.querySelector("#data-saved-high-score")
 
+function scoreBoard() {
+  if (answeredQuestion === correctAnswer) {
+    scoreboard + scoreBoardCount 
+
+    playerScore.textContent = score
+    highScore.textContent = savedHighScore
+  }
+}
+
+function endGame() {
+  if (secondLeft === 0 || questionsAnswered === 10) {
+    return; 
+  }
+  if (score > savedHighScore.lastChild) {
+    //go to highscore page
+  }
+}
+
+var playerInitials = document.querySelector("#intials")
+var playerHighScore = document.querySelector("#top-scores")
+function enterinitials() {
+  //allow input of player initials and save to page
+  }
+  
+}
+
+
+startButton.addEventListener("click", startQuiz);
 
