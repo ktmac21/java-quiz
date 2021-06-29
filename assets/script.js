@@ -136,37 +136,37 @@ var secondsLeft = 30;
 
 
 
-function startQuiz () {
-  chosenQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
+// function startQuiz () {
+//   chosenQuestion = quizQuestions[Math.floor(Math.random() * quizQuestions.length)];
   
-  answersInChosenQuestion = chosenQuestion.split(" ");
-  currentQuestion = answersInChosenQuestion.length;
-  display = []
+//   answersInChosenQuestion = chosenQuestion.split(" ");
+//   currentQuestion = answersInChosenQuestion.length;
+//   display = []
 
-  for (var i = 0; i < currentQuestion; i++) {
-    display.push(""); 
-  }
+//   for (var i = 0; i < currentQuestion; i++) {
+//     display.push(""); 
+//   }
 
-  quizContainer.textContent = display.join(" ")
-}
+//   quizContainer.textContent = display.join(" ")
+// }
 
-function checkAnswer() {
-  var answeredQuestion = false;
-  if (chosenQuestion === correctAnswer) {
-    answeredQuestion = true;
-  }
-  if (answeredQuestion === false) {
-    secondsleft - 10)
-  }
-}
+// function checkAnswer() {
+//   var answeredQuestion = false;
+//   if (chosenQuestion === correctAnswer) {
+//     answeredQuestion = true;
+//   }
+//   if (answeredQuestion === false) {
+//     secondsleft--;
+//   }
+// }
 
-function scoreboard() {
-  scorepoints = "100"
-  if (answeredQuestion === true) {
-    scorepoints ++;
+// function scoreboard() {
+//   scorepoints = 100
+//   if (answeredQuestion === true) {
+//     scorepoints ++;
 
-  }
-}
+//   }
+// }
 
 
 
@@ -193,32 +193,32 @@ var score = 0
 var scoreBoardCount = 100
 var savedHighScore = document.querySelector("#data-saved-high-score")
 
-function scoreBoard() {
-  if (answeredQuestion === correctAnswer) {
-    scoreboard + scoreBoardCount 
+// function scoreBoard() {
+//   if (answeredQuestion === correctAnswer) {
+//     scoreboard + scoreBoardCount 
 
-    playerScore.textContent = score
-    highScore.textContent = savedHighScore
-  }
-}
+//     playerScore.textContent = score
+//     highScore.textContent = savedHighScore
+//   }
+// }
 
-function endGame() {
-  if (secondLeft === 0 || questionsAnswered === 10) {
-    return; 
-  }
-  if (score > savedHighScore.lastChild) {
-    //go to highscore page
-  }
-}
+// function endGame() 
+//   if (secondLeft === 0 || questionsAnswered === 10) {
+//     return; 
+//   }
+//   if (score > savedHighScore.lastChild) {
+//     //go to highscore page
+//   }
+// }
 
-var playerInitials = document.querySelector("#intials")
-var playerHighScore = document.querySelector("#top-scores")
-function enterinitials() {
-  //allow input of player initials and save to page
-  }
+// var playerInitials = document.querySelector("#intials")
+// var playerHighScore = document.querySelector("#top-scores")
+// function enterinitials() {
+//   //allow input of player initials and save to page
+//   }
   
-}
+// }
 
 
-startButton.addEventListener("click", startQuiz);
+// startButton.addEventListener("click", startQuiz);
 

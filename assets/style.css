@@ -212,11 +212,11 @@ input {
 
 @media screen and (max-width: 664px) {
     #quiz {
-        width: 500px; 
+        width: 400px; 
     }
 
     #timer-container {
-        width: 500px; 
+        width: 400px; 
     }
 
     p {
