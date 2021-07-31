@@ -6,37 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
-    <title>Java-Quiz</title>
+    <title>Quiz</title>
 </head>
 
 <body>
 
     <header>
-        <h1>Java-Quiz</h1>
-        <p>Test your Java knowledge. Click the button below to play!</p>
+        <h1>Javascript Quiz</h1>
+        <p id="subtitle">Test your Javascript knowledge. Click the button below to play!</p>
     </header>
     <div class="wrapper">
-
-        <div id="quiz">
-        <button class="button" id="begin-quiz">Take Quiz!</button>
+        <div id="quiz-container">
+            <p id="questions"></p>
+            <button class="button" id="begin-quiz">Take Quiz!</button>
+            <div id="choices"></div>
         </div>
+
         <section>
             <div id="timer-container">
-                
+
                 <h2>Timer:
-                    <p id="timer">30</p>
+                    <p id="timer">60</p>
                 </h2>
 
-                <h3>Score:
+                <h2>Score:
                     <p id="scoreboard">0</p>
-                </h3>
-                
+                </h2
+
             </div>
         </section>
-
     </div>
 
 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="./assets/script.js"></script>
 
 </body>

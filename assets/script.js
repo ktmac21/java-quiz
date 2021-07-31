@@ -1,301 +1,161 @@
 var quizQuestions = [
 
   {
+
     question: "Values made up of text & can contain letters, numbers, symbols, punctuation, & even emojis are called:",
-    answers: {
-      a: "strings", correct: true,
-      b: "methods", correct: false,
-      c: "functions", correct: false,
-      d: "text messages", correct: false,
-    },
-  
+    choices: ["string", "methods", "functions", "text messages"],
+    answer: "string",
   },
 
   {
 
     question: "This property keeps track of how many characters it has:",
-    answers: {
-      a: "string", correct: false,
-      b: "length", correct: true,
-      c: "slice", correct: false,
-      d: "semi-colon", correct: false, 
-    },
+    choices: ["string", "length", "slice", "semi-colon"],
+    answer: "length",
 
   },
 
 
   {
     question: "In Javascript, these are variables that contain multiple data values and use keys to name values:",
-    answers: {
-      a: "functions", correct: false,
-      b: "methods", correct: false,
-      c: "data", correct: false,
-      d: "objects", correct: true, 
-    },
-
+    choices: ["functions", "methods", "data", "objects"],
+    answer: "objects",
   },
 
   {
 
     question: "This is the word for functions when they are stored as a property within a JavaScript object:",
-    answers: {
-      a: "mediaQuery", correct: false,
-      b: "methods", correct: true,
-      c: "functions", correct: false,
-      d: "event listeners", correct: false,
-    },
-
+    choices: ["media query", "methods", "functions", "event listeners"],
+    answer: "methods",
   },
 
   {
 
     question: "If a condition is true, this conditional statement is used to specify execution for a block of code:",
-    answers: {
-      a: "if", correct: true,
-      b: "while", correct: false,
-      c: "if else", correct: false,
-      d: "none of the above", correct: false,
-    },
-   
+    choices: ["if", "while", "if else", "none of these"],
+    answer: "if",
+
   },
-
   {
-
     question: "This conditional statement specifies a new test if the first condition is false:",
-    answers: {
-      a: "if else", correct: true,
-      b: "while", correct: false,
-      c: "for loop", correct: false,
-      d: "when", correct: false,
-    },
-  
+    choices: ["if else", "while", "for loop", "when"],
+    answer: "if else",
   },
 
   {
 
     question: "A function must be what in order to call it:",
-    answers: {
-      a: "declared", correct: true,
-      b: "imagined", correct: false,
-      c: "enabled", correct: false,
-      d: "run", correct: false,
-    },
-
+    choices: ["declared", "imagined", "enabled", "run"],
+    answer: "declared",
   },
 
   {
     question: "A boolean value is a value that can be either:",
-    answers: {
-      a: "number or letter", correct: false,
-      b: "true or false", correct: true,
-      c: "right or wrong", correct: false,
-      d: "All of the above", correct: false,
-    },
-
+    choices: ["number or letter", "true or false", "right or wrong", "all of these"],
+    answer: "true or false",
   },
 
   {
 
     question: "This Javascript function is used to detect certain events, such as a user's mouse click or a key press, and then it responds accordingly:",
-    answers: {
-      a: "event detector", correct: false,
-      b: "movement listener", correct: false,
-      c: "event listener", correct: true,
-      d: "None of the above", correct: false,
-    },
-
+    choices: ["event detectors", "movement listener", "event listener", "none of these"],
+    answer: "event listener",
   },
 
   {
 
     question: "Javascript’s querySelector() method does which of the following:",
-    answers: {
-      a: "returns the first element that matches a specified CSS selector(s) in the document", correct: true,
-      b: "runs a query loop after it’s selected", correct: false,
-      c: "starts the program when an HTML element is clicked", correct: false,
-      d: "runs a while loop", correct: false,
-    },
-
+    choices: ["returns the first element", "runs a query loop", "starts the program", "runs a while loop"],
+    answer: "returns the first element",
 
   },
-
 ]
 
-var startButton = document.querySelector("#begin-quiz");
+// Global variables
+
+var currentQuestionIndex = 0;
+var quizContainer = document.querySelector("#quiz-container");
+var startButton = document.querySelector("#begin-quiz")
+var choicesDisplay = document.querySelector("#choices")
 var timerText = document.querySelector("#timer");
-var quizContainer = document.querySelector("#quiz");
-var scoreText = document.querySelector("#player-score");
-var highScoreText = document.querySelector("#high-score");
-var secondsLeft = 30;
-var currentQuestion = 0;
-var chosenQuestion;
+var timer = 60;
+var scoreBoardEl = document.querySelector("#scoreboard")
+var scoreBoard = 0;
 
 
+
+// function to start the quiz
 
 function startQuiz() {
   startButton.style.display = "none";
   setTime();
-  chosenQuestion = quizQuestions[currentQuestion];
-  
-  var questionTitle = document.createElement("p");
-  questionTitle.innerText = chosenQuestion.question;
-  questionTitle.classList.add("questionTitle");
-  quizContainer.appendChild(questionTitle);
-
-
-  var buttonEl = document.createElement("button");
-  buttonEl.innerText = chosenQuestion.answers.a;
-  buttonEl.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonEl);
-
-  var buttonTwo = document.createElement("button");
-  buttonTwo.innerText = chosenQuestion.answers.b;
-  buttonTwo.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonTwo);
-
-  var buttonThree = document.createElement("button");
-  buttonThree.innerText = chosenQuestion.answers.c;
-  buttonThree.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonThree);
-
-  var buttonFour = document.createElement("button");
-  buttonFour.innerText = chosenQuestion.answers.d;
-  buttonFour.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonFour);
-
-
+  getQuestions();
 }
 
+function getQuestions() {
 
-function showNextQuestion() {
-  currentQuestion++;
-  displayQuestion();
-  
-}
-function displayQuestion() {
-  quizContainer.innerHTML = ""
-  chosenQuestion = quizQuestions[currentQuestion];
+  var currentQuestion = quizQuestions[currentQuestionIndex];
+  var questionDisplay = document.querySelector("#questions");
+  questionDisplay.innerText = currentQuestion.question;
 
-  var questionTitle = document.createElement("p");
-  questionTitle.innerText = chosenQuestion.question;
-  questionTitle.classList.add("questionTitle");
-  quizContainer.appendChild(questionTitle);
+  choicesDisplay.innerHTML = "";
 
+  currentQuestion.choices.forEach(function (choice) {
 
-  var buttonEl = document.createElement("button");
-  buttonEl.innerText = chosenQuestion.answers.a;
-  buttonEl.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonEl);
+    var answerButton = document.createElement("button");
+    answerButton.setAttribute("class", "choice");
+    answerButton.setAttribute("value", choice);
 
-  var buttonTwo = document.createElement("button");
-  buttonTwo.innerText = chosenQuestion.answers.b;
-  buttonTwo.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonTwo);
+    answerButton.textContent = choice;
 
-  var buttonThree = document.createElement("button");
-  buttonThree.innerText = chosenQuestion.answers.c;
-  buttonThree.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonThree);
+    answerButton.onclick = questionClick;
 
-  var buttonFour = document.createElement("button");
-  buttonFour.innerText = chosenQuestion.answers.d;
-  buttonFour.addEventListener("click", showNextQuestion);
-  quizContainer.appendChild(buttonFour);
+    choicesDisplay.appendChild(answerButton);
+  });
 }
 
-startButton.addEventListener("click", startQuiz);
+function questionClick() {
+  if (this.value !== quizQuestions[currentQuestionIndex].answer) {
+    timer -= 5;
+
+    if (timer < 0) {
+      timer = 0;
+    }
+    timerText.textContent = timer;
+  } else {
+    scoreBoard += 100;
+    scoreBoardEl.textContent = scoreBoard;
+
+  }
+
+  currentQuestionIndex++;
+
+  if (currentQuestionIndex === quizQuestions.length) {
+    goToHighScores();
+
+  } else {
+
+    getQuestions();
+  }
+}
 
 function setTime() {
   var timerInterval = setInterval(function () {
-    secondsLeft--;
-    timerText.textContent = secondsLeft;
-    if (secondsLeft === 0) {
+    timer--;
+    timerText.textContent = timer;
+    if (timer === 0) {
       clearInterval(timerInterval);
-      sendMessage();
       goToHighScores();
-      
+
     }
   }, 1000);
 }
 
 
-function sendMessage() {
-  timerText.textContent = "Game over!";
-  
-
-};
-var playerScore = document.querySelector("#player-score")
-var highScore = document.querySelector("high-score")
-var score = 0 
-var savedHighScore = document.querySelector("#data-saved-high-score")
-
- 
-var buttonEl = document.querySelector("button");
-var buttonTwo = document.querySelector("button");
-var buttonThree = document.querySelector("button");
-var buttonFour = document.querySelector("button");
-
-
-
-scoreBoardEl = document.querySelector("#scoreboard");
-
-
-function checkAnswers() {
-  var selectedButton = quizQuestions;
-  console.log(selectedButton);
-  if (selectedButton === true) {
-    score + 100;
-    scoreBoardEl.textContent = score; 
-  }else {
-    secondsLeft - 10; 
-  }
-  
-  }
-  buttonEl.addEventListener("click", checkAnswers);
-  buttonTwo.addEventListener("click", checkAnswers);
-  buttonThree.addEventListener("click", checkAnswers);
-  buttonFour.addEventListener("click", checkAnswers); 
-  
-
 
 function goToHighScores() {
-    location.replace("./highscores.html")
-  }
-var inputEl = document.querySelector("#initials-input")    
-var initialButton = document.querySelector("#submit")
-var HighScoreEl = document.querySelector("#scores")
-var initialsEl = document.querySelector("#initials")
-
-
-renderInitialsScore();
-
-function renderLastInitial() {
-  var initials = localStorage.getItem("initials");
-  var score = localStorage.getItem("scores");
-
-  if (!initials || !score) {
-    return;
-  }
-
-  initialsEl.textContent = initials;
-  HighScoreEl.textContent = score;
+  location.replace("./highscores.html");
 }
 
-initialButton.addEventListener("click", function(event) {
-  event.preventDefault();
 
-  var initials = document.querySelector("initial").value;
-  var score = document.querySelector("score").value;
-
-  if (initials === "") {
-    displayMessage("error", "Initials cannot be blank");
-  } else if (score === "") {
-    displayMessage("error", "Score cannot be blank");
-  } else {
-    displayMessage("success", "Player info entered successfully");
-
-    localStorage.setItem("initials", initials);
-    localStorage.setItem("score", score);
-    renderLastRegistered();
-  }
-});
+$("#begin-quiz").on("click", startQuiz);
