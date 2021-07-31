@@ -113,42 +113,16 @@ h2 p {
 
 
 
-/* @media screen and (max-width: 1232px) {
-    #quiz {
-      
-        width: 900px;
-    }
-        
-    #timer-container {
-        width: 900px; 
-        
-    }
 
-
-}
-
-@media screen and (max-width: 928px) {
-    #quiz {
-     width: 600px;
-    height: 600px;
-    }
-
-    #timer-container {
-         width: 600px;
-        }
-     p {
-        font-size: 25px; 
-        padding-bottom: 20px; 
-    }
-}
 
 @media screen and (max-width: 664px) {
-    #quiz {
+    #quiz-container {
         width: 400px; 
     }
 
     #timer-container {
         width: 400px; 
+        
     }
 
     p {
@@ -157,23 +131,42 @@ h2 p {
 }
 
 @media screen and (max-width: 450px) {
-    #quiz {
-        width: 300px; 
+    #quiz-container {
+        width: 250px; 
+        height: 350px; 
     }
 
     #timer-container {
-        width: 300px; 
+        width: 250px; 
+        height: 70px; 
     }
 
     p {
-        font-size: 18px;
+        font-size: 10px;
     }
 
     button {
         width: 200px; 
+        height: 10px; 
+        font-size: 10px;
+        line-height: 2px;
     }
 
     h1 {
-        font-size: 60px; 
+        font-size: 20px; 
     }
-} */
+    #questions {
+        font-size: 12px;
+    }
+    #subtitle {
+        font-size: 10px;
+        color: white;
+} 
+    h2 p {
+        font-size: 15px; 
+    }
+    h2 {
+        font-size: 15px;
+        height: 50px; 
+    }
+}
