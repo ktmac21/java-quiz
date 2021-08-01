@@ -57,7 +57,7 @@ var quizQuestions = [
 
   {
 
-    question: "This Javascript function is used to detect certain events, such as a user's mouse click or a key press, and then it responds accordingly:",
+    question: "This Javascript function is used to detect events, such as a user's mouse click, and then responds accordingly:",
     choices: ["event detectors", "movement listener", "event listener", "none of these"],
     answer: "event listener",
   },
@@ -65,8 +65,8 @@ var quizQuestions = [
   {
 
     question: "Javascript’s querySelector() method does which of the following:",
-    choices: ["returns the first element", "runs a query loop", "starts the program", "runs a while loop"],
-    answer: "returns the first element",
+    choices: ["grabs an element", "creates a query", "initiates a function", "runs a loop"],
+    answer: "grabs an element",
 
   },
 ]

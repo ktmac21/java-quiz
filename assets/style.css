@@ -8,6 +8,7 @@ h1 {
     font-size: 40px;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-style: oblique;
+    margin-top: 2px;
 }
 
 #subtitle {
@@ -56,7 +57,7 @@ p {
     justify-content:space-evenly;
     background-color: #95A3B3; 
     width: 500px;
-    height: 100px;
+    height: 90px;
     padding: 10px; 
     box-shadow: 0 0 10px 2px;
     text-align: center;
@@ -95,8 +96,8 @@ h2 {
     border-radius: 50px;
     box-shadow: 0 0 10px 2px;
     width: 200px;
-    height: 80px;
-    font-size: 30px;
+    height: 70px;
+    font-size: 25px;
     color: black;  
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
@@ -115,25 +116,12 @@ h2 p {
 
 
 
-@media screen and (max-width: 664px) {
-    #quiz-container {
-        width: 400px; 
-    }
 
-    #timer-container {
-        width: 400px; 
-        
-    }
-
-    p {
-        font-size: 20px;
-    }
-}
-
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 600px) {
     #quiz-container {
         width: 250px; 
-        height: 350px; 
+        height: 450px; 
+    
     }
 
     #timer-container {
@@ -146,20 +134,21 @@ h2 p {
     }
 
     button {
-        width: 200px; 
-        height: 10px; 
-        font-size: 10px;
+        width: 215px; 
+        height: 50px; 
+        font-size: 15px;
         line-height: 2px;
     }
 
     h1 {
-        font-size: 20px; 
+        font-size: 30px; 
+       
     }
     #questions {
         font-size: 12px;
     }
     #subtitle {
-        font-size: 10px;
+        font-size: 20px;
         color: white;
 } 
     h2 p {
