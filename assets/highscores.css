@@ -28,9 +28,8 @@ button {
     font-style: oblique;
     box-shadow: 0 0 10px 2px;
 }
-button:hover {
-    opacity: 35%;
-}
+
+
 
 h5 {
 

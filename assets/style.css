@@ -84,9 +84,8 @@ button {
     font-style: oblique;
     box-shadow: 0 0 10px 2px;
 }
-button:hover {
-    opacity: 35%;
-}
+
+
 
 
 h2 {
@@ -111,10 +110,6 @@ h2 p {
     margin-top: 10px; 
     
 }
-
-
-
-
 
 
 @media screen and (max-width: 600px) {
