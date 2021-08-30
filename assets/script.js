@@ -81,7 +81,7 @@ var timerText = document.querySelector("#timer");
 var timer = 60;
 var scoreBoardEl = document.querySelector("#scoreboard")
 var scoreBoard = 0;
-
+var finalscoreEl = document.querySelector(".finalscore")
 
 
 // function to start the quiz
@@ -154,8 +154,11 @@ function setTime() {
 
 
 function goToHighScores() {
+  var finalscore = finalscoreEl.value;  
+  
+  window.localStorage.setItem("finalscore", finalscore);
   location.replace("./highscores.html");
+  
 }
-
 
 $("#begin-quiz").on("click", startQuiz);

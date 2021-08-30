@@ -79,3 +79,8 @@ input {
     border-radius: 20px; 
     
 }
+
+#final-score {
+    font-size: 100px;
+    color: white;
+}
