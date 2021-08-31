@@ -4,5 +4,5 @@ This is Javascript-quiz. Let me test your javascript knowledge! The goal was to 
 
 URL: https://ktmac21.github.io/java-quiz/
 
-![](assets/Java-Quiz.png)
+![](assets/quiz.png)
 
