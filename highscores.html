@@ -1,31 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="./assets/highscores.css" />
     <title>High Scores</title>
 </head>
+
 <body>
-
     <div class="wrapper">
-        <div id="final-score">Final Score</div>
-    
-        <input type="text" id="initials-input" placeholder="Enter Initials Here"></input>
-        <button id="submit" >Submit</button>
-        <button id="goback" onclick="window.location.href = './index.html';">Go Back</button>
-    
+        <div class="final-score">Final Score:</div>
+        <div class="finalscore"></div>
 
-        <h5>High Scores
-            
-            <p id="initials">Initials:</p>
-            <p id="highscore">Score:</p>
+        <input type="text" id="initials-input" placeholder="Enter Initials Here" />
+
+        <button id="submit">Submit</button>
+        <button id="goback" onclick="window.location.href = './index.html';">
+            Go Back
+        </button>
+        
+        <h5>
+            High Scores
+            <div class="container">
+            <div class="scoreBoard">
+                <div class="list">Initials</div>
+
+                <div class="list">Score</div>
+            </div>
+            </div>
         </h5>
+    
     </div>
 
     <script src="./assets/highscores.js"></script>
-
-    
 </body>
+
 </html>

@@ -80,7 +80,42 @@ input {
     
 }
 
-#final-score {
-    font-size: 100px;
+.final-score {
+    font-size: 50px;
     color: white;
+}
+
+.finalscore {
+    font-size: 50px;
+    color: red; 
+}
+
+.scoreBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.list {
+    border-bottom: solid 2px black;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.initialsSpacing {
+    list-style-type: none;
+    text-align: left;
+    margin-left: 50px; 
+    margin-bottom: 10px; 
+    font-size: 20px
+}
+
+.scoreSpacing {
+    list-style-type: none;
+    text-align: right;
+    margin-right: 50px; 
+    margin-top: -32px; 
+    margin-bottom: 5px; 
+    font-size: 20px; 
 }

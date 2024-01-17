@@ -1,4 +1,4 @@
-var quizQuestions = [
+let quizQuestions = [
 
   {
 
@@ -73,18 +73,16 @@ var quizQuestions = [
 
 // Global variables
 
-var currentQuestionIndex = 0;
-var quizContainer = document.querySelector("#quiz-container");
-var startButton = document.querySelector("#begin-quiz")
-var choicesDisplay = document.querySelector("#choices")
-var timerText = document.querySelector("#timer");
-var timer = 60;
-var scoreBoardEl = document.querySelector("#scoreboard")
-var scoreBoard = 0;
-var finalscoreEl = document.querySelector(".finalscore")
+let currentQuestionIndex = 0;
+let quizContainer = document.getElementById("quiz-container");
+let startButton = document.getElementById("begin-quiz");
+let choicesDisplay = document.getElementById("choices");
+let timerText = document.getElementById("timer");
+let timer = 60;
+let scoreBoardEl = document.getElementById("scoreboard");
+let scoreBoard = 0;
+let finalscoreEl = document.querySelector(".finalscore");
 
-
-// function to start the quiz
 
 function startQuiz() {
   startButton.style.display = "none";
@@ -93,16 +91,14 @@ function startQuiz() {
 }
 
 function getQuestions() {
-
-  var currentQuestion = quizQuestions[currentQuestionIndex];
-  var questionDisplay = document.querySelector("#questions");
+  let currentQuestion = quizQuestions[currentQuestionIndex];
+  let questionDisplay = document.getElementById("questions");
   questionDisplay.innerText = currentQuestion.question;
 
   choicesDisplay.innerHTML = "";
 
   currentQuestion.choices.forEach(function (choice) {
-
-    var answerButton = document.createElement("button");
+    let answerButton = document.createElement("button");
     answerButton.setAttribute("class", "choice");
     answerButton.setAttribute("value", choice);
 
@@ -125,40 +121,33 @@ function questionClick() {
   } else {
     scoreBoard += 100;
     scoreBoardEl.textContent = scoreBoard;
-
   }
 
   currentQuestionIndex++;
 
   if (currentQuestionIndex === quizQuestions.length) {
     goToHighScores();
-
   } else {
-
     getQuestions();
   }
 }
 
 function setTime() {
-  var timerInterval = setInterval(function () {
+  let timerInterval = setInterval(function () {
     timer--;
     timerText.textContent = timer;
     if (timer === 0) {
       clearInterval(timerInterval);
       goToHighScores();
-
     }
   }, 1000);
 }
 
-
-
 function goToHighScores() {
-  var finalscore = finalscoreEl.value;  
-  
-  window.localStorage.setItem("finalscore", finalscore);
+  let finalscore = scoreBoard;
+
+  localStorage.setItem("finalscore", finalscore);
   location.replace("./highscores.html");
-  
 }
 
-$("#begin-quiz").on("click", startQuiz);
+document.getElementById("begin-quiz").addEventListener("click", startQuiz);
